@@ -21,7 +21,7 @@ myLetters = ""
 for x in range(0, nr_letters):
   myLetters += random.choice(letters)
 # print(myLetters)
-
+####
 
 #symbol Generator
 mySymbols = ""

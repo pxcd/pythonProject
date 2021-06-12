@@ -23,7 +23,7 @@ def bid_function():
         max_bid = max(bids.values())
         print(f"The winner is {max_winner} with a bid of ${max_bid}")
 
-
+#
 bid_function()
 
 
