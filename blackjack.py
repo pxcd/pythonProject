@@ -35,7 +35,7 @@ cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 # 11 is the Ace.
 # cards = [11, 10, 10, 10, 10]
 import random
-from art import logo
+# from art import logo
 
 
 def deal_card():
@@ -85,7 +85,7 @@ computer_total = calculate_score(computer_cards)
 
 print(f"   Your cards: {user_cards}, current score: {user_total}")
 print(f"   Computer's first card: {computer_cards[0]}")
-print(f"   Computer's hidden card: {computer_cards[1]}")
+# print(f"   Computer's hidden card: {computer_cards[1]}")
 
 # if user_total == 0 or computer_total == 0 or user_total > 21:
 #   is_game_over = True
