@@ -8,7 +8,7 @@ screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Snek Gaem")
 screen.tracer(0)
-
+#
 
 snek = Snek()
 screen.listen()
