@@ -1,6 +1,8 @@
 import time
 from turtle import Screen
 from snek import Snek
+from food import Food
+from scoreboard import ScoreBoard
 
 ##
 screen = Screen()
@@ -11,8 +13,9 @@ screen.tracer(0)
 #
 
 snek = Snek()
+food = Food()
 screen.listen()
-
+scoreboard = ScoreBoard()
 
 screen.onkey(snek.up, "Up")
 screen.onkey(snek.down, "Down")
@@ -21,12 +24,34 @@ screen.onkey(snek.right, "Right")
 
 
 game_is_on = True
+
 while game_is_on:
     screen.update()
     time.sleep(0.1)
 
     snek.move()
-    # snek.up()
+    # detect collision with food
+    if snek.head.distance(food) < 15:
+        food.refresh()
+        scoreboard.increment()
+        snek.extend()
+
+    # detect wall collission
+    if snek.head.xcor() > 280 or snek.head.xcor() < -280 or snek.head.ycor() > 280 or snek.head.ycor() < -280:
+        scoreboard.game_over()
+        game_is_on = False
+
+    # detect tail collision
+    # if head collides with any segment, game over
+    for segment in snek.segments[1:]:
+        # if segment == snek.head:
+        #     pass
+        # elif snek.head.distance(segment) < 10:
+        #     game_is_on = False
+        #     scoreboard.game_over()
+        if snek.head.distance(segment) < 10:
+            game_is_on = False
+            scoreboard.game_over()
 
 
 screen.exitonclick()
