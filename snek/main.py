@@ -36,10 +36,12 @@ while game_is_on:
         scoreboard.increment()
         snek.extend()
 
-    # detect wall collission
+    # detect wall collision
     if snek.head.xcor() > 280 or snek.head.xcor() < -280 or snek.head.ycor() > 280 or snek.head.ycor() < -280:
-        scoreboard.game_over()
-        game_is_on = False
+        scoreboard.reset()
+        snek.reset()
+        # scoreboard.game_over()
+        # game_is_on = False
 
     # detect tail collision
     # if head collides with any segment, game over
@@ -50,8 +52,11 @@ while game_is_on:
         #     game_is_on = False
         #     scoreboard.game_over()
         if snek.head.distance(segment) < 10:
-            game_is_on = False
-            scoreboard.game_over()
+            scoreboard.reset()
+            snek.reset()
+            # game_is_on = False
+            # scoreboard.game_over()
+
 
 
 screen.exitonclick()
