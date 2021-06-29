@@ -45,10 +45,10 @@ while True:
 # write to csv states that were not guessed
 all_states = data.state.to_list()
 missing_states = []
-for state in all_states:
-    if state not in correct_answers:
-        missing_states.append(state)
-
+# for state in all_states:
+#     if state not in correct_answers:
+#         missing_states.append(state)
+missing_states = [missing for missing in missing_states if missing not in all_states]
 
 missing_states = pandas.DataFrame(missing_states)
 
