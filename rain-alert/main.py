@@ -6,8 +6,8 @@ from twilio.http.http_client import TwilioHttpClient
 
 
 API_KEY = ""
-my_latitude =
-my_longitude =
+my_latitude = ""
+my_longitude = ""
 TWILIO_ACCOUNT_SID = ""
 TWILIO_AUTH_TOKEN = ""
 MY_NUMBER = "+"
